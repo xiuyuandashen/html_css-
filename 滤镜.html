@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        img {
+            display: block;
+            /*块级元素*/
+            width: 12vw;
+            height: auto;
+            /*自适应高度*/
+            margin: 0 auto;
+            /*上下外边距为0 左右自适应*/
+            /*
+            -webkit-filter  滤镜 以下效果都是可以叠加使用的 例如 -webkit-filter：brightness(10)  grayscale(1);
+            grayscale(n) 设置灰度属性  n默认值为1 n(0-1)
+            brightness(n) 设置亮度属性  n默认值为1，是正常亮度 
+            sepia() 褐色属性 n默认值为1  (0-1)
+            blur()  模糊度 单位是像素 比如设置5px就是将5px合成1px这样就变模糊了 如果我设置非常高的像素图片就会消失因为无法合成1px
+            contrast() 对比度  默认正常为1  对比度为0的话就是一片灰色 数值越高颜色对比度越强
+            saturate() 饱和度  默认为1 越高颜色越鲜艳 对比度为0的话就是灰色 没有颜色之分
+            invert() 胶片底色  默认为1 
+            hue-rotate() 色相旋转  默认为0  0-360deg 如果设置360deg的话 色彩会旋转一圈回到原来的颜色
+            */
+            float: left;
+            transition: all 3s;
+
+        }
+
+        body::after {
+            /*解决浮动高度塌陷*/
+            display: block;
+            clear: both;
+            content: "";
+        }
+
+        img:hover {
+            -webkit-filter: none;
+        }
+
+        .img1 {
+            -webkit-filter: grayscale(1);
+        }
+
+        .img2 {
+            -webkit-filter: brightness(2);
+        }
+
+        .img3 {
+            -webkit-filter: sepia(1);
+        }
+
+        .img4 {
+            -webkit-filter: blur(1000px);
+
+        }
+
+        .img5 {
+            -webkit-filter: contrast(0.4);
+        }
+
+        .img6 {
+
+            -webkit-filter: saturate(2);
+        }
+
+        .img7 {
+
+            -webkit-filter: invert();
+        }
+
+        .img8 {
+
+            /* -webkit-filter: hue-rotate(360deg); */
+            animation: f 3s infinite alternate;
+        }
+
+        @keyframes f {
+            from {
+                -webkit-filter: hue-rotate(0deg);
+            }
+
+            to {
+                -webkit-filter: hue-rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <img src="1.jpg" class="img1">
+    <img src="3.jpeg" class="img2">
+    <img src="2.jpeg" alt="" class="img3">
+    <img src="2.jpeg" alt="" class="img4">
+    <img src="1.jpg" alt="" class="img5">
+    <img src="1.jpg" alt="" class="img6">
+    <img src="1.jpg" alt="" class="img7">
+    <img src="2.jpeg" alt="" class="img8">
+</body>
+
+</html>

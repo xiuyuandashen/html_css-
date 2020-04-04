@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        .d1 {
+            width: 5em;
+            height: 5em;
+            margin: 100px auto;
+            background-color: pink;
+            /* transition: all 2s; */
+            /* 设置具有过渡效果的属性 可以用逗号隔开多个属性*/
+            transition-property: all;
+            /* 设置整个过渡效果的时间长度 可以用逗号隔开多个属性的过渡时间*/
+            transition-duration: 2s;
+            /* 
+            设置整个过渡动画变化的速度
+            ease：(默认值)从慢到快再慢下来
+            linear：设置线性速度（匀速）
+            ease-in：从慢到快的变化过程
+            ease-out：从快到慢的变化过程
+            ... ... 我们可以再浏览器检查中查看过渡效果
+            甚至我们可以自定义过渡速度 cubic-bezier()
+            */
+            transition-timing-function: cubic-bezier(0.98, 0.23, 0.56, 1.32);
+            /* 设置延迟时间 */
+            /* transition-delay: 1s;延迟1s再过渡 */
+
+        }
+
+        .d1:hover {
+            width: 6em;
+            height: 6em;
+            /* transform 转换 */
+            transform: rotate(360deg);
+            background-color: red;
+            border-radius: 50%;
+        }
+
+        /* 卡片悬浮效果 */
+        .d2 {
+            width: 300px;
+            height: 400px;
+            margin: 10px auto;
+            background-color: skyblue;
+            /* box-shadow 盒子阴影 水平偏移量 垂直偏移量 模糊度 阴影的颜色*/
+            box-shadow: 0px 0px 0px #bbbbbb;
+            transition: all 0.5s;
+        }
+
+        .d2:hover {
+            box-shadow: 0px 5px 10px #999999;
+        }
+    </style>
+</head>
+<div class="d1">
+
+</div>
+<div class="d2">
+
+</div>
+
+<body>
+
+</body>
+
+</html>

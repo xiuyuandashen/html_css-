@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="./font/iconfont.css">
+    <script src=""></script>
+    <style>
+        /* Unicode 方式 */
+        @font-face {
+            font-family: 'iconfont';
+            src: url('font/iconfont.eot');
+            src: url('font/iconfont.eot?#iefix') format('embedded-opentype'),
+                url('font/iconfont.woff2') format('woff2'),
+                url('font/iconfont.woff') format('woff'),
+                url('font/iconfont.ttf') format('truetype'),
+                url('font/iconfont.svg#iconfont') format('svg');
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        #fj {
+            font-size: 3em;
+            color: red;
+        }
+
+        /* Font class */
+        .icon-tubiaozhizuomoban5 {
+            font-size: 3em;
+        }
+
+        /* Symbol  */
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+    </style>
+    <script src="./font/iconfont.js"></script>
+</head>
+
+<body>
+    <!-- 
+    字体图标（矢量图标）：占用带宽小，不会失真，可以随意调节大小和颜色 可在阿里矢量库下载图标
+        有三种引用方式
+        1、Unicode 可读性差 兼容高 由于是字体只能设置纯色  
+        2、Font class 可读性好兼容高由于是字体只能设置纯色  
+        3、Symbol 可以自定义各种颜色
+        方法在从矢量库下载的项目图标里有 
+            1、首先选择图标加入购物车 
+            2、保存到一个项目中 
+            3、下载项目 
+            4、打开项目的html 里面就是三种方法和代码
+            
+    图片：比较占用带宽，放大可能会产生失真的效果，图片改变颜色不方便
+
+ -->
+    <!-- Unicode -->
+    <span class="iconfont" id="fj">&#xe636;</span>
+    <!-- Font class -->
+    <span class="iconfont icon-tubiaozhizuomoban5"></span>
+    <!-- Symbol -->
+    <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-tubiaozhizuomoban
+        "></use>
+    </svg>
+</body>
+
+</html>

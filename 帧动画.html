@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        #d1 {
+            width: 300px;
+            height: 200px;
+            background-image: url("mr.png");
+            margin: 50px auto;
+            background-size: auto;
+            /* background-position:x,y;
+                移动图片
+             */
+            /* background-position: 0px -200px; */
+            /* border: 1px solid #999999; */
+            /* steps() 帧动画 把动画分成多个步骤  */
+            /* animation: mr 2s steps(16) infinite; */
+        }
+
+        @keyframes mr {
+            0% {
+                background-position: 0px 0px;
+            }
+            100% {
+                background-position: 0px -3072px;
+            }
+        }
+        #jn:checked~#d1{
+            animation: mr 2s steps(16) infinite;
+        }
+        label{
+            display:block;
+            width: 150px;
+            height: 70px;
+            margin: 50px auto;
+            border: 1px solid #bbbbbb;
+            text-align: center;
+            line-height: 70px;
+            border-radius: 20px; 
+            transition: all 0.5s;
+        }
+        label:hover{
+            box-shadow:0 0 5px #999;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="jn">螺旋丸</label>
+    <input type="checkbox" id="jn" hidden="hidden">
+    <div id="d1"></div>
+
+</body>
+
+</html>

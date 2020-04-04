@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        /* 
+            浮动是将元素脱离正常的文档流，向左或者向右 靠近父元素的边缘或者是设置了浮动的其他元素的边缘
+            问题： 浮动塌陷问题
+            原因：由于子元素设置了浮动 脱离了文档流， 父元素找不到子元素，无法自动撑开高度导致高度塌陷
+                解决的最好方案：
+                    我们可以设置一个伪元素在父元素中的末尾，这样可以让父元素找到他
+         */
+        .parent {
+            background-color: pink;
+            width: 600px;
+            margin: 0 auto;
+            /*上下外边距为0 左右自适应*/
+            /* height: 600px; */
+
+        }
+
+        .parent>div {
+            width: 200px;
+            height: 600px;
+            background-color: purple;
+            float: left;
+            text-align: center;
+            line-height: 600px;
+            font-size: 3rem;
+        }
+
+        .parent::after {
+            content: "";
+            /*设置内容 伪元素必须设置内容 可以为空 但是不能不设置*/
+            display: block;
+            /*设置为块元素*/
+            clear: left;
+            /* 清除左浮动 可以设置both both是清除左右浮动*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <p>hello world</p>
+</body>
+
+</html>

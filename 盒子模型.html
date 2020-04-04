@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        .d1 {
+            width: 300px;
+            height: 300px;
+            padding: 50px;
+            border: 30px solid #ccc;
+            margin: 100px;
+            background-color: plum;
+            box-sizing: content-box;
+        }
+        
+        .d2 {
+            width: 300px;
+            height: 300px;
+            padding: 50px;
+            border: 30px solid #ccc;
+            margin: 100px;
+            background-color: skyblue;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        box-sizing:盒子大小模型的设定
+        默认值：content-box 当你想要内容大小是固定的就选用content-box
+            border-box 当你想要盒子大小是固定的就选用border-box，防止设置的padding border 撑开盒子大小 ！！！这很关键 
+
+     -->
+    <div class="d1"></div>
+    <div class="d2"></div>
+</body>
+
+</html>

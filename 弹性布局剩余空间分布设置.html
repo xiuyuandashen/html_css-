@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        /* flex: 剩余空间分布   
+            例如 flex：1；占据1份
+                flex：2；占据2份  总共3份  代表着 浏览器剩余的空间（未指定宽度）分为三份 你1份 我2份 
+        
+        */
+        body{
+            display: flex;
+        }
+        .left{
+            background-color: pink;
+            flex: 1;
+        }
+        .main{
+            background-color: rebeccapurple;
+            flex: 2;
+        }
+        .right{
+            background-color: skyblue;
+            width: 200px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="left"><h1>侧边栏</h1></div>
+    <div class="main"><h1>主内容</h1></div>
+    <div class="right"><h1>广告</h1></div>
+</body>
+
+</html>

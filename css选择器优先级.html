@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <!-- 
+        选择器优先级
+        继承样式<浏览器样式<标签样式<class样式<id样式<style样式
+        提升优先级的办法 
+            1、在样式属性后面添加 !important 将属性的优先级提高到最大
+            2、通过选择器的复杂程度来提高优先级
+
+     -->
+    <style>
+        .d1 {
+            color: pink
+                /*!important*/
+            ;
+            /*!important 提高优先级*/
+            font-size: 10rem;
+        }
+
+        #d1 {
+            /* 直接覆盖了class样式 */
+            color: red;
+            font-size: 10rem;
+        }
+
+        body #d1 {
+            /* 提高选择器的复杂程度 来提高优先级 这样的优先级比 #di 高*/
+            color: lawngreen;
+            font-size: 10rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <!-- style样式直接覆盖了id样式 -->
+        <div class="d1" id="d1" style="color:royalblue">hello world!</div>
+
+    </header>
+</body>
+
+</html>

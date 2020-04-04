@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        body{
+            font-family: "楷体";
+        }
+        #d1 {
+            width: 300px;
+            height: 300px;
+            margin: 0px auto;
+            transition: all 1s;
+        }
+
+        /* checked 选中状态  ~#d1 对#d1的样式进行改变*/
+        input[value="绿色"]:checked~#d1{
+            background-color: green;
+        }
+
+        input[value="红色"]:checked~#d1{
+            background-color: red;
+        }
+
+        input[value="蓝色"]:checked~#d1{
+            background-color: royalblue;
+        }
+
+        
+        input[value="绿色"]:checked~.b2 [for="c1"]{
+            background-color: green;
+        }
+
+        input[value="红色"]:checked~.b2 [for="c2"]{
+            background-color: red;
+        }
+
+        input[value="蓝色"]:checked~.b2 [for="c3"]{
+            background-color: royalblue;
+        }
+
+
+        .btn {
+            display: inline-block;
+            width: 150px;
+            height: 70px;
+            margin: 50px;
+            border: 1px solid #bbbbbb;
+            text-align: center;
+            line-height: 70px;
+            border-radius: 20px;
+            transition: all 0.5s;
+            /* color: #ffff; */
+            color: #fff;
+            font-size: 1.4em;
+            animation: f 3s infinite ;
+
+        }
+        @keyframes f{
+            from{
+                text-shadow:0px 0px 0px #999;
+            }
+            30%{
+                text-shadow:0px 0px 1.2px #999;
+            }
+            50%{
+                text-shadow:0px 0px 2px #999;
+            }
+
+            70%{
+                text-shadow:0px 0px 1.2px #999;
+            }
+            to{
+                text-shadow:0px 0px 0px #999;
+            }
+        }
+        /* [for="c1"]:hover{
+            background-color: green;
+        }
+        [for="c2"]:hover{
+            background-color: red;
+        }
+        [for="c3"]:hover{
+            background-color: royalblue;
+        } */
+
+        .btn:hover {
+            box-shadow: 0px 0px 10px #999;
+        }
+
+        .b2 {
+            width: 800px;
+            margin: 0px auto;
+
+        }
+
+        h3 {
+            display: block;
+            margin: 0px auto;
+            height: 100px;
+            width: auto;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- radio 单选框 
+        checkbox 多选框
+    -->
+    <h3>请选择你喜欢的颜色</h3>
+    <!-- 
+        <label> 标签为 input 元素定义标注（标记）。
+        label 元素不会向用户呈现任何特殊效果。不过，它为鼠标用户改进了可用性。如果您在 label 元素内点击文本，就会触发此控件。就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上。
+        <label> 标签的 for 属性应当与相关元素的 id 属性相同。
+     -->
+    
+
+    <!-- hidden="hidden" 这个属性可以标签 -->
+    <input type="radio" name="color" value="绿色" id="c1" hidden="hidden">
+    <input type="radio" name="color" value="红色" id="c2" hidden="hidden">
+    <input type="radio" name="color" value="蓝色" id="c3" hidden="hidden">
+    <div id="d1">
+
+    </div>
+    <div class="b2">
+        <label for="c1" class="btn">变绿</label>
+        <label for="c2" class="btn">变红</label>
+        <label for="c3" class="btn">变蓝</label>
+
+    </div>
+</body>
+
+</html>

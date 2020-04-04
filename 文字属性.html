@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        .d1 {
+            /* 字体 */
+            font-family: "Times New Roman", Times, serif;
+            /* 字体粗细 100-900 或者  */
+            font-weight: 800;
+            /* 字体样式 
+                斜体italic 正常 normal 倾斜的文字 oblique
+            */
+            font-style: normal;
+            /* 字体大小 */
+            font-size: 2em;
+            /* 颜色 */
+            color: #fff;
+            /* 文字阴影 
+            text-shadow:水平偏移量 垂直偏移量 模糊度 阴影的颜色
+            效果可以叠加用逗号隔开
+            */
+            text-shadow: 2px 2px 5px black, 4px 4px 5px red;
+            /* 动画 */
+            animation: donghua 3s infinite alternate;
+        }
+
+        @keyframes donghua {
+            0% {
+                text-shadow: 2px 2px 5px black, 4px 4px 5px red;
+            }
+
+            50% {
+                text-shadow: 0px 0px 0px black, 0px 0px 0px red;
+            }
+
+            100% {
+                text-shadow: 2px 2px 5px black, 4px 4px 5px red;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">
+        hello world 你好
+    </div>
+</body>
+
+</html>

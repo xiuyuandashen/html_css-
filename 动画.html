@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        #d1{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            /* animation: name1 3s; */
+            animation-name: name1;
+            animation-duration: 3s;
+            animation-timing-function: ease;
+            animation-iteration-count: 1;
+            animation-direction:normal;
+            animation-fill-mode: forwards;/*使动画保留最好一帧的效果*/
+            /* 
+            animation:综合性的动画设置属性
+            animation-name 动画名称
+            animation-duration 动画时长
+            animation-timing-function 动画变化的速度，默认ease
+                ease：(默认值)从慢到快再慢下来
+                linear：设置线性速度（匀速）
+                ease-in：从慢到快的变化过程
+                ease-out：从快到慢的变化过程
+                ... ... 我们可以再浏览器检查中查看动画速度效果
+                甚至我们可以自定义动画速度 cubic-bezier()
+            animation-iteration-count 设置动画循环的次数
+                n整数次
+                infinite 无限次循环
+            animation-direction 动画循环的方向 
+                默认normal 正常
+                reverse   反方向运动
+                alternate 来回运动(奇数次正常运动，偶次数反方向运动)
+                alternate-reverse 来回运动(偶数次正常运动，奇数次反方向运动)
+            animation-fill-mode：forwards 使动画保留最好一帧的效果
+                
+             */
+        }
+        @keyframes name1{
+            0%{
+                transform: translate(0,0);
+            }
+            20%{
+                transform: translate(300px,0);
+            }
+            40%{
+                transform: translate(300px,200px);
+            }
+            60%{
+                transform: translate(100px,200px);
+            }
+            80%{
+                transform: translate(500px,300px);
+            }
+            100%{
+                transform: translate(300px,500px);
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="d1"></div>
+</body>
+
+</html>

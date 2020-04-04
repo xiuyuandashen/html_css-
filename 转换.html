@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        /* 
+        perspective 透视点 这样可以看出3D效果 单位像素 得在body中设置
+        transform 转换:
+            2D移动
+                1、translate(x,y) 移动 x为水平移动 y为垂直移动 单位为像素
+                    1、translateX() 水平移动
+                    2、translateY() 垂直移动
+            2D平面旋转
+                1、rotate(ndeg) 单位为deg 围绕中心点顺时针旋转
+            3D立体旋转
+                1、rotate3d(x,y,z,ndeg) 按照 坐标点(x,y,z) 旋转 n度  
+                    1、rotateX(ndeg) 单位为deg n>0围绕水平轴顺时针旋转反之逆时针旋转 
+                    2、rotateY(ndeg) 单位为deg n>0围绕垂直轴顺时针旋转反之逆时针旋转
+                    3、rotateZ(ndeg) 单位为deg n>0围绕着目光射向屏幕的那条线顺时针旋转反之逆时针旋转
+            3D移动
+                1、translate3d(x,y,z) 
+                    1、translateX() 水平移动 单位为像素
+                    2、translateY() 垂直移动 单位为像素
+                    3、translateZ() 围绕着目光射向屏幕的那条线移动 单位为像素
+            放大缩小 transform: scale(1) 1为原始大小
+         */
+
+        body {
+            perspective: 1000px;
+        }
+
+        #d1 {
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            transform: translate(100px, 100px);
+
+        }
+
+        #d2 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transform: rotate(30deg);
+
+        }
+
+        #d3 {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: red;
+            transform: rotateX(50deg) rotateY(50deg) rotateZ(50deg);
+
+        }
+        #d4 {
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            background-color: red;
+            transform:translate3d(0,-300px,400px);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+    <div id="d3"></div>
+    <div id="d4"></div>
+</body>
+
+</html>

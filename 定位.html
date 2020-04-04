@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        #d1{
+            /* 固定定位 就是固定在浏览器的某个位置 不管滑轮怎么滚动它还在那个位置*/
+            position: fixed;
+            right: 100px;
+            top: 100px;
+            width: 10em;
+            height: 200px;
+            background-color: royalblue;
+        }
+        #d2{
+            /* 相对定位 */
+            position: relative;
+            right: 100px;
+            top: 100px;
+            width: 10em;
+            height: 200px;
+            background-color: royalblue;
+            
+        }
+        #d3{
+            /* 绝对定位 */
+            position: absolute;
+            right: 100px;
+            top: 400px;
+            width: 10em;
+            height: 200px;
+            background-color: royalblue;
+            
+            
+        }
+        #d4{
+            /* 粘性定位 */
+            position: sticky;
+            left:500px;
+            top: 400px;
+            width: 10em;
+            height: 200px;
+            background-color: royalblue;
+            
+            
+        }
+        #d5{
+            width: 100px;
+            height: 1000px;
+        }
+
+    </style>
+</head>
+<body>
+<!-- 
+    通过top、left、right、bottom进行定位
+    固定定位    position: fixed    根据浏览器的边框进行定位 脱离了文档流不占用原来的空间
+    相对定位    position: relative  相对于自己原来的位置进行定位移动 保留了原来位置的空间(未脱离文档流) 
+    绝对定位    position: absolute  相对于设置了定位的父元素,或者是祖先元素进行定位移动    脱离了文档流不占用原来的空间
+    静态定位(默认情况，不做定位)
+    粘性定位    position: sticky    根据浏览器的边框进行定位 保留了原来位置的空间(未脱离文档流)
+ -->
+<div id="d1">固定定位</div> 
+<div id="d2">相对定位</div>
+<div id="d3">绝对定位</div>
+<div id="d4">粘性定位</div>
+<div id="d5"></div>
+</body>
+
+</html>

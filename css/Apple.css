@@ -1,0 +1,214 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    width: 100%;
+    height: 44px;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* 
+    rgba: r 红色 g 绿色 b 蓝色 a 透明度
+    */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav a {
+    /*a标签是行元素不能设置宽度 但是因为现在它是弹性子元素 所以可以设置*/
+    text-decoration: none;
+    color: #999;
+    width: 102px;
+    text-align: center;
+    transition: color 0.5s;
+}
+
+.nav a:hover {
+    color: #fff;
+}
+
+.nav .logo {
+    height: 44px;
+    background-image: url("../img/logn.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nav .serarch {
+    height: 44px;
+    background-image: url("../img/soushuoWhite.svg");
+    background-size: 21px auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nav .buy {
+    height: 44px;
+    background-image: url("../img/buy.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.togglebtn {
+    height: 44px;
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    /*主轴为竖着排*/
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.togglebtn .line {
+    height: 1px;
+    width: 18px;
+    background-color: #fff;
+    transition: all .5s;
+    transform-origin: left;
+    /*设置旋转的中心点*/
+}
+
+.togglebtn .line:nth-child(1) {
+    position: absolute;
+    left: calc(50% - 9px);
+    /* calc() 函数用于动态计算长度值 */
+    top: 15px;
+}
+
+.togglebtn .line:nth-child(2) {
+    position: absolute;
+    left: calc(50%-9px);
+    bottom: 15px;
+}
+
+.navpage {
+    /* display: none; */
+    /* 由于我们需要过渡效果所以不能设置nome 因为 nome-->flex是瞬间的过程 会把所有的过渡效果消失了 */
+    display: flex;
+    height: 0vh;
+    width: 100vw;
+    /*溢出隐藏*/
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: all 1s;
+    background-color: #000;
+}
+
+.navpage .navMain {
+    width: 100vw;
+}
+
+
+/* 媒体查询 */
+
+@media (max-width: 768px) {
+    .togglebtn {
+        display: flex;
+        position: relative;
+        z-index: 100;
+    }
+    .nav .logo {
+        position: relative;
+        z-index: 100;
+    }
+    /* .togglebtn .line {
+        display: block;
+    } */
+    .nav .text {
+        display: none;
+    }
+    .nav {
+        justify-content: space-between;
+    }
+    .nav a,
+    .nav .togglebtn {
+        width: 50px;
+    }
+    .nav .logo {
+        order: 2;
+        /*弹性布局中 排序弹性子容器的位置*/
+    }
+    .nav .togglebtn {
+        order: 1;
+        /*弹性布局中 排序弹性子容器的位置*/
+    }
+    .nav .buy {
+        order: 3;
+        /*弹性布局中 排序弹性子容器的位置*/
+    }
+    #choose:checked~.togglebtn .line:nth-child(1) {
+        transform: rotate(45deg);
+        /*默认是中心旋转*/
+    }
+    #choose:checked~.togglebtn .line:nth-child(2) {
+        transform: rotate(-45deg);
+        /*默认是中心旋转*/
+    }
+    #choose:checked~.navpage {
+        display: flex;
+        width: 100vw;
+        height: 100vh;
+        /*固定定位*/
+        /* position: fixed;
+        left: 0;
+        top: 0; */
+        background-color: #000;
+        flex-direction: column;
+        padding-top: 54px;
+    }
+    .serarchInput {
+        margin: 0 28px 18px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        height: 36px;
+        border-radius: 4px;
+        color: #999;
+        background-color: rgba(45, 45, 45, 0.98);
+    }
+    .serarchInput .icon {
+        width: 32px;
+        height: 36px;
+        background-image: url(../img/soushuoWhite.svg);
+        background-size: 17px auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: .3;
+    }
+    .serarchInput input[type="text"] {
+        flex: 1;
+        margin: 0 10px;
+        height: 100%;
+        /* transparent 背景透明 */
+        background: transparent;
+        /* 去除边框 */
+        border: none;
+        /*outline 轮廓 */
+        outline: none;
+        color: #fff;
+    }
+    hr {
+        border-color: #333333;
+    }
+    .navList {
+        display: flex;
+        flex-direction: column;
+        margin: 0 28px;
+        justify-content: flex-start;
+    }
+    .navList a {
+        height: 44px;
+        width: 100%;
+        line-height: 44px;
+        text-align: left;
+        border-bottom: 1px solid #333333;
+    }
+    .navList a:last-child {
+        border: none;
+    }
+}
