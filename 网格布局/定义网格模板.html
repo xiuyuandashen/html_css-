@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0,minimal-ui:ios">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script src=""></script>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-areas: 'header header header' 'hello hello hello' 'box1 box2 box2' 'box3 box3 box3' 'bt bt bt';
+            grid-gap: 1rem;
+            grid-auto-rows: minmax(70px, auto);
+        }
+        
+        .header {
+            grid-area: header;
+        }
+        
+        .hello {
+            grid-area: hello;
+        }
+        
+        .box1 {
+            grid-area: box1;
+        }
+        
+        .box2 {
+            grid-area: box2;
+        }
+        
+        .box3 {
+            grid-area: box3;
+        }
+        
+        .bt {
+            grid-area: bt;
+        }
+        
+        .header,
+        .box1,
+        .box2,
+        .box3,
+        .bt,
+        .hello {
+            background-color: #eee;
+            padding: 0.5rem;
+            border: 1px #ccc solid;
+        }
+        
+        .header,
+        .bt {
+            text-align: center;
+        }
+        
+        @media (max-width: 500px) {
+            .wrapper {
+                grid-template-areas: 'header' 'hello' 'box1' 'box2' 'box3' 'bt';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        grid-template-areas：定义网格模板
+     -->
+    <div class="wrapper">
+        <div class="header">
+            <h1>网格布局</h1>
+        </div>
+        <div class="hello">
+            <h2>hello world</h2>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum nesciunt natus in cum molestias assumenda est, aliquam sapiente distinctio impedit alias ullam numquam quae dicta rerum ipsum tempore omnis? Voluptatibus, facere non est recusandae harum
+            porro sequi tempora, officiis deleniti nostrum similique. Voluptates fugiat aliquid necessitatibus tempore ad. Tempore expedita, qui aspernatur aliquam nesciunt, nam suscipit magnam maiores itaque sed perferendis quos inventore velit exercitationem
+            officia dolores beatae facere corporis rerum nobis aliquid facilis non. Ipsa tempore culpa quaerat praesentium molestias veniam asperiores laborum at obcaecati error quia sit modi laboriosam dicta, incidunt rerum aperiam fugiat. Harum et ut
+            voluptate.
+        </div>
+        <div class="box1">
+            <h3>标题1</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, quibusdam nam eum adipisci reprehenderit id hic eligendi deserunt, asperiores, non voluptatibus sequi dolore! Nobis, ea ipsum reprehenderit ratione perferendis non!</div>
+        <div class="box2">
+            <h3>标题2</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, nostrum aspernatur? In alias mollitia minus suscipit placeat adipisci corporis eaque officiis harum aliquam aperiam fugiat quas recusandae, possimus omnis sequi.</div>
+        <div class="box3">
+            <h3>标题3</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam consectetur minima, necessitatibus recusandae animi est omnis atque deleniti maxime? Quidem labore perferendis error earum ipsum maxime! Quos ipsum similique cum!</div>
+        <div class="bt">
+            <p>Date：2020-05-16</p>
+
+        </div>
+    </div>
+</body>
+
+</html>
